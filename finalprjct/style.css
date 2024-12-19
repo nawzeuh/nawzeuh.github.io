@@ -2,7 +2,7 @@ body {
   background-image: url(images/background.jpeg);
 }
 img{
-    width: 100%; /* image element will take up the full width of it's parent element (our div) */
+    width: 50%; /* image element will take up the full width of it's parent element (our div) */
 }
 
 
