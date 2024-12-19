@@ -1,3 +1,2 @@
-body {
-  background-image: url('finalprjct/images/background.jpeg')
-}
+body.background{
+    background-image: url(images/background.jpeg);
