@@ -4,10 +4,5 @@ body {
 img{
     width: 100%; /* image element will take up the full width of it's parent element (our div) */
 }
-div{
-    width: 45%;
-    display: inline-block; /* this line lets us position div elements */
-    position: relative; /* lets us change element location relative to default position */
-    left: 5%; /* will move element 5% of screen width FROM the left side toward the right */
-}
+
 
