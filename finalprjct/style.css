@@ -2,7 +2,7 @@ body.background{
     background-image: url('images/background.jpeg'); /* using tag AND class so that we can set a background image just on one page */
 }
 <p style="text-align: center;">
-<img src= "https://upload.wikimedia.org/wikipedia/commons/e/e5/Rave_in_the_Henge_2005.jpg"
+<img src= "https://upload.wikimedia.org/wikipedia/commons/e/e5/Rave_in_the_Henge_2005.jpg?20050621185006"
 alt="background image"
 width="100" height="100"
 border="10">
