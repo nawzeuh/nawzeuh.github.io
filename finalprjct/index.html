@@ -1,28 +1,99 @@
-<!DOCTYPE html> <!-- this tag tells the browser we are using HTML5 -->
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css"> <!-- this tag tells the browser to use the CSS file's styling -->
-         <!-- the title shown in the tab of the browser -->
-        <title>
-          pony party!!!
-        </title>
-    </head>
+let ponyX, ponyY; 
+let ponySpeed = 5;
+let direction =1;
+let message = "";
+let danceStartTime;
+let animationStarted = false;
+let bgImg;
 
-    <body> <!-- the body holds all your content -->
-        <h1>
-            pony party!!! by nazir fernandez
-        </h1>
+function preload () {
+  bgImg = loadImage ("assets/background.jpeg"); //background for window
+}
+function setup() {
+  createCanvas (1920,1080);
+  image(bgImg, 10, 10);
+  ponyX = -150;
+  ponyY = height - 150;
+}
 
-        <p id="intro"> <!-- p tags are paragraphs, and an id lets you style specific elements as opposed to all tag types -->
-          click the mouse to begin the party!
-        </p>
-        <div> <!-- div tags let you group content together -->
-                <img id="background" src="images/background.jpeg" alt="ponies rave"> <!-- the img tag shows an image -->
-            </a>
-            <p class="citation"> <!-- specifying a class lets you apply similar CSS style to multiple elements -->
-                "Rave-In-The-Henge" by Andrew Dunne is marked with CC0 2.0.
-            </p>
-        </div>
+function draw() {
+  background(bgImg);
+
+  if (animationStarted) {
+    let elapsed=millis() - danceStartTime;
+    if (elapsed< 2000) {
+      message = "Come on everypony!";
+    } else if (elapsed < 4000) {
+      message= "It's party time!";
+    } else { 
+    message = "";
+    } 
+    
+    if (elapsed < 4000) {
+      ponyX += ponySpeed / 60;
+      if (ponyX > width / 2) ponyX = width/ 2;
+    }
+    
+    if (elapsed >= 4000) {
+      animateDance();
+    } 
+    
+    if (elapsed >= 32000) {
+      noLoop();
+    }
+  }
+
+drawPinkiePie (ponyX, ponyY); 
+
+fill(0);
+textSize(64);
+textAlign(CENTER, CENTER); 
+text(message, width / 2, 50);
+}
+
+function mousePressed() {
+  if(!animationStarted) {
+    animationStarted = true;
+    danceStartTime = millis();
+  }
+}
+
+function drawPinkiePie(x, y) {
+  fill (255, 105, 180);
+  ellipse(x, y, 150, 100);
+  
+  fill (255, 182, 193);
+  ellipse(x, y - 60, 100, 100);
+  
+  fill (255);
+  ellipse(x - 25, y - 80, 35, 45);
+  ellipse(x + 25, y - 80, 35, 45);
+  
+  fill(0);
+  ellipse(x - 25, y - 80, 15, 20);
+  ellipse(x + 25, y - 80, 15, 20);
+  
+  fill(255, 20, 147);
+  arc(x - 30, y - 90, 80, 80, PI, TWO_PI);
+  arc(x + 30, y - 90, 80, 80, PI, TWO_PI);
+  ellipse (x-40, y - 110, 40, 50);
+  ellipse(x + 40, y - 110, 40, 50);
+  
+  fill (255, 105, 180);
+  rect(x - 50, y + 30, 20, 50);
+  rect(x + 30, y + 30, 20, 50);
+  rect (x - 60, y + 50, 20, 50);
+  
+  fill (0, 191, 255);
+  ellipse (x - 30, y + 20, 20, 30);
+  ellipse (x, y + 20, 20, 30);
+  ellipse(x + 30, y + 20, 20, 30);
+}
+
+
+function animateDance() {
+  ponyY = height - 150 + sin(millis() / 100) * 10;
+}
 
       
 
