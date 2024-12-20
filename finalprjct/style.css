@@ -2,10 +2,6 @@ body{
  margin: 0;
   padding: 0;
   text-align: center;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Rave_in_the_Henge_2005.jpg?20050621185006");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 100vh;
 }
 
