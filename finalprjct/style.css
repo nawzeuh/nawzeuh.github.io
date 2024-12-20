@@ -1,11 +1,11 @@
 body{
+ margin: 0;
+  padding: 0;
   text-align: center;
-}
-#party-place {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  background-image: url(images.background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 
