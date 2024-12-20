@@ -1,3 +1,4 @@
 body.background{
     background-image: url('images/background.jpeg'); /* using tag AND class so that we can set a background image just on one page */
 }
+<p align="background.jpeg">
